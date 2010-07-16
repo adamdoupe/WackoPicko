@@ -1,5 +1,42 @@
 WackoPicko Vulnerable Website
 
+WackoPicko is a website that contains known vulnerabilities. It was
+first used for the paper Why Johnny Can't Pentest: An Analysis of
+Black-box Web Vulnerability Scanners found:
+http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf 
+
+Install Instructions:
+Import the WackoPicko database into MySQL using a command like the
+following: 
+mysql -u <user> -p < current.sql
+
+This will create the MySQL user wackopicko with the password
+webvuln!@# as well as create the wackopicko table.
+
+The wackopicko table contains all of the data that was present while
+testing the scanners in Why Johnny Can't Pentest.
+
+The final step is to enable read/write access to the upload directory
+of WackoPicko for the webserver user. An easy way to do this is:
+chmod 777 -R upload
+
+Valid Logins:
+
+Regular users: 
+scanner1/scanner1
+scanner2/scanner2
+bryce/bryce
+
+Administrator users:
+admin/admin
+adamd/adamd
+
+Known Issues:
+ - The search bar doesn't appear in Internet Explorer.
+ - There are some onions hanging around (particularly in the upload
+   folder, but I kept them there to preserve parity with the version
+   used during the tests.
+
 Vulnerabilities:
 
 Reflected XSS:
