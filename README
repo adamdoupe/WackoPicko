@@ -36,6 +36,8 @@ Known Issues:
  - There are some onions hanging around (particularly in the upload
    folder, but I kept them there to preserve parity with the version
    used during the tests.
+ - WackoPicko was developed with the assumption that is was running as
+   the root application as the URL and won't work running as a directory.
 
 Vulnerabilities:
 
