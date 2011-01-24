@@ -3,7 +3,24 @@
 WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf)
 
 ## Download Pre-Built Image
-If you don't want to set up WackoPicko from source, [Matthew Phillips](mailto:info@gnacktrack.co.uk) is hosting a [live CD and VMWare image of WackoPicko](http://gnacktrack.co.uk/download.php) on his [GnackTrack](http://gnacktrack.co.uk) server. 
+If you don't want to set up WackoPicko from source, [Matthew Phillips](mailto:info@gnacktrack.co.uk) is hosting a [live CD and VMware image of WackoPicko](http://gnacktrack.co.uk/download.php) on his [GnackTrack](http://gnacktrack.co.uk) server. 
+
+### Converting VMware Image to VirtualBox
+This was sent to me by Matthew Harbage, to get the VMware image working on VirtualBox on a Windows host:
+
+> Two actions to get the virtualized version of WackoPicko working so you can connect to Apache from the host machine (using VirtualBox)
+> 
+> 1. On the guest: delete /etc/udev/rules.d/70-persistent-net.rules (to clear MAC address details of the adapter from the machine the virual image was greated by). This enables Ubuntu to enable the (virtualized) network adapter.
+> 
+> 2. On the host: map port 80 through from the guest to be accessible from the host using 
+> 
+> "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "X" --natpf1 "guestweb,tcp,,8888,,80"
+>
+> where X is the name of the VirtualBox virual machine.
+>
+> This means in your favourate browser from your host machine, you can access WackoPicko via:
+> http://[ip-address of VirtualBox adapter]:8888
+
 
 ## Install From Source 
 Import the WackoPicko database into MySQL using a command like the following:  
