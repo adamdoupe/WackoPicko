@@ -31,6 +31,7 @@ The final step is to enable read/write access to the upload directory of WackoPi
 * The search bar doesn't appear in Internet Explorer.
 * There are some onions hanging around (particularly in the upload folder) but I kept them there to preserve parity with the version used during the tests.
 * WackoPicko was developed with the assumption that is was running as the root application as the URL and won't work running as a directory.
+* WackoPicko uses PHP's short tags, they must be enabled to run the application.
 
 ## Vulnerabilities
 
