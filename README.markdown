@@ -5,6 +5,9 @@ WackoPicko is a website that contains known vulnerabilities. It was first used f
 ## Download Pre-Built Image
 If you don't want to set up WackoPicko from source, [Matthew Phillips](mailto:info@gnacktrack.co.uk) is hosting a [live CD and VMware image of WackoPicko](http://gnacktrack.co.uk/download.php) on his [GnackTrack](http://gnacktrack.co.uk) server. 
 
+## External Links/Help
+* [WackoPicko on aldeid](http://www.aldeid.com/index.php/WackoPicko), a security wiki.
+
 ### Converting VMware Image to VirtualBox
 This was sent to me by Matthew Harbage, to get the VMware image working on VirtualBox on a Windows host:
 
