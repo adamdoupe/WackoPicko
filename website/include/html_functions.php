@@ -10,9 +10,9 @@ function our_header($selected = "", $search_terms = "")
    ?>
 <html>
   <head>
-    <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print"> 
-    <!--[if IE]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="<?= $DIRECTORY  ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="<?= $DIRECTORY ?>/css/blueprint/print.css" type="text/css" media="print"> 
+    <!--[if IE]><link rel="stylesheet" href="<?= $DIRECTORY ??>/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
     <link rel="stylesheet" href="/css/stylings.css" type="text/css" media="screen">
     <title>WackoPicko.com</title>
   </head>
@@ -115,7 +115,7 @@ function thumbnail_pic_list($pictures, $link_to = False)
 
 ?>
 <li>
-<a href="<?=h( $link_to . "picid=" . $pic['id'] ) ?>"><img src="/upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
+<a href="<?=h( $link_to . "picid=" . $pic['id'] ) ?>"><img src="<?= $DIRECTORY ?>/upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
 </li>
 <?php
 
