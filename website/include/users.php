@@ -4,7 +4,7 @@ require_once("settings.php");
 require_once("ourdb.php");
 
 define("HOME_URL", DIRECTORY . "users/home.php");
-define("VIEW_URL", DIRECTORY . "users/home.php");
+define("VIEW_URL", DIRECTORY . "users/view.php");
 define("LOGIN_URL", DIRECTORY . "users/login.php");
 define("LOGOUT_URL",  DIRECTORY . "users/logout.php");
 define("PURCHASED_URL",  DIRECTORY . "pictures/purchased.php");
