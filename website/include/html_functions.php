@@ -135,7 +135,7 @@ function thumbnail_pic_list($pictures, $link_to = False)
 function high_quality_item_link($item)
 {
    $name = h($_SERVER['SERVER_NAME']);
-   $link = "http://{$name}" . DIRECTORY . "pictures/highquality.php?picid={$item['id']}&key=highquality";
+   $link = "http://{$name}" . DIRECTORY . "pictures/high_quality.php?picid={$item['id']}&key=highquality";
    return "<a href='{$link}'>{$link}</a>"; 
 }
 
