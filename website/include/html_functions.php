@@ -115,7 +115,7 @@ function thumbnail_pic_list($pictures, $link_to = False)
 
 ?>
 <li>
-<a href="<?=h( $link_to . "picid=" . $pic['id'] ) ?>"><img src="<?= DIRECTORY ?>/upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
+<a href="<?=h( $link_to . "picid=" . $pic['id'] ) ?>"><img src="<?= DIRECTORY ?>upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
 </li>
 <?php
 
