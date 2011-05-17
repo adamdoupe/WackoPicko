@@ -36,6 +36,9 @@ The wackopicko table contains all of the data that was present while testing the
 The final step is to enable read/write access to the upload directory of WackoPicko for the webserver user. An easy way to do this is:  
   chmod 777 -R upload
 
+## Run WackoPicko in a directory
+edit website/include/settings.php. Change DIRECTORY to the directory where you want WackoPicko to live. Be sure to include a trailing slash.
+
 ## Valid Logins
 
 ### Regular users
@@ -84,7 +87,7 @@ http://localhost/pictures/view.php?picid=3
 The comment field is vulnerable to XSS, however must go through a preview form.  
 
 * Forceful Browsing  
-http://localhost/pictures/highquality.php?picid=3&key=highquality  
+http://localhost/pictures/high_quality.php?picid=3&key=highquality  
 The user doesn't have to purchase the picture to see the high quality version.
 
 * Command-line Injection  

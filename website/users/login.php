@@ -39,7 +39,7 @@ if ($bad_login)
       <form action="<?=h( $_SERVER['PHP_SELF'] )?>" method="POST">
       <tr><td>Username :</td><td> <input type="text" name="username" /></td></tr>
       <tr><td>Password :</td><td> <input type="password" name="password" /></td></tr>
-      <tr><td><input type="submit" value="login" /></td><td> <a href="/users/register.php">Register</a></td></tr>
+      <tr><td><input type="submit" value="login" /></td><td> <a href="<?= DIRECTORY ?>users/register.php">Register</a></td></tr>
    </form>
  </table>
 </div>

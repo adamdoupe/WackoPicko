@@ -100,7 +100,7 @@ else
 	  </div>
       <?php foreach ($related as $p) { ?>
 	  <div class="column prepend-1 span-4 first last">
-	    <a href="<?=h( Pictures::$VIEW_PIC_URL . "?picid=" . $p['id'] ) ?>"><img src="/upload/<?=h($p['filename']) ?>.128.jpg" width="128" /></a>
+	    <a href="<?=h( Pictures::$VIEW_PIC_URL . "?picid=" . $p['id'] ) ?>"><img src="<?= DIRECTORY ?>upload/<?=h($p['filename']) ?>.128.jpg" width="128" /></a>
 	 <p>by <a href="<?= Users::$VIEW_URL ?>?userid=<?=h( $p['user_id'] )?>"><?=h( $p['login'] )?></a></p>
 	  </div>
 <?php }?>
@@ -114,7 +114,7 @@ else
 
       <?php foreach ($same as $pic) { ?>
 	  <div class="column prepend-1 span-4 first last" style="margin-bottom:2em;">
-	    <a href="<?=h( Pictures::$VIEW_PIC_URL . "?picid=" . $pic['id'] ) ?>"><img src="/upload/<?=h($pic['filename']) ?>" width="128" /></a>
+	    <a href="<?=h( Pictures::$VIEW_PIC_URL . "?picid=" . $pic['id'] ) ?>"><img src="<?= DIRECTORY ?>upload/<?=h($pic['filename']) ?>" width="128" /></a>
 	  </div>
 <?php }?>
 	</div>

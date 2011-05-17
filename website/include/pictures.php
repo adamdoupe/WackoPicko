@@ -1,14 +1,20 @@
 <?php
 
+require_once("settings.php");
 require_once("ourdb.php");
+
+define("VIEW_PIC_URL",  DIRECTORY . "pictures/view.php");
+define("CONFLICT_URL",  DIRECTORY . "pictures/conflict.php");
+define("HIGH_QUALITY_URL",  DIRECTORY . "pictures/highquality.php");
+define("RECENT_URL",  DIRECTORY . "pictures/recent.php");
 
 class Pictures
 {
 
-   static public $VIEW_PIC_URL = "/pictures/view.php";
-   static public $CONFLICT_URL = "/pictures/conflict.php";
-   static public $HIGH_QUALITY_URL = "/pictures/highquality.php";
-   static public $RECENT_URL = "/pictures/recent.php";
+   static public $VIEW_PIC_URL = VIEW_PIC_URL;
+   static public $CONFLICT_URL = CONFLICT_URL;
+   static public $HIGH_QUALITY_URL = HIGH_QUALITY_URL;
+   static public $RECENT_URL = RECENT_URL;
    function get_all_pictures_by_user($userid)
    {
       $query = sprintf("SELECT *, UNIX_TIMESTAMP(created_on) as created_on_unix from pictures where user_id = '%d'",

@@ -15,7 +15,7 @@ $cart = Cart::get_cart($user['id']);
 
 if (!$cart)
 {
-   http_redirect("/error.php?msg=You do not have a cart");
+   http_redirect(DIRECTORY . "error.php?msg=You do not have a cart");
 }
 
 $items = Cart::cart_items($cart['id']);

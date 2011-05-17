@@ -1,5 +1,6 @@
 <?php
 
+require_once("settings.php");
 require_once("users.php");
 
 function http_redirect($url)

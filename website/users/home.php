@@ -18,9 +18,9 @@ $user = Users::current_user();
    <h2>Hello <?=h( $user['login'] )?>, you got <?=h($user['tradebux']) ?> Tradebuxs to spend!</h2>
 <p>Cool stuff to do:</p>
 <ul style="list-style-type:none;">
-<li><a href="/users/similar.php">Who's got a similar name to you?</a></li>
+<li><a href="<?= DIRECTORY ?>users/similar.php">Who's got a similar name to you?</a></li>
 <li><a href="<?= Users::$VIEW_URL ?>?userid=<?=h( $user['id'] ) ?>">Your Uploaded Pics</a></li>
-<li><a href="/pictures/purchased.php">Your Purchased Pics</a></li>
+<li><a href="<?= DIRECTORY ?>pictures/purchased.php">Your Purchased Pics</a></li>
 </ul>
 <p>
   Enter in our contest: <br/>
@@ -28,12 +28,13 @@ $user = Users::current_user();
 	    WIDTH="610"
 	    HEIGHT="410"
 	    CODEBASE="http://active.macromedia.com/flash5/cabs/swflash.cab#version=6,0,23,0">
-	    <PARAM NAME="MOVIE" VALUE="/action.swf">
+	    <PARAM NAME="MOVIE" VALUE="<?= DIRECTORY ?>action.swf?directory=<?= urlencode(DIRECTORY) ?>">
 	    <PARAM NAME="PLAY" VALUE="true">
 	    <PARAM NAME="LOOP" VALUE="true">
 
 	    <PARAM NAME="QUALITY" VALUE="high">
-	    <EMBED SRC="/action.swf" WIDTH="510" HEIGHT="410"
+            <param name="FlashVars" value="name1=value1&name2=value2" />
+	    <EMBED SRC="<?=DIRECTORY ?>action.swf?directory=<?= urlencode(DIRECTORY) ?>" WIDTH="510" HEIGHT="410" FlashVars="name1=value1&name2=value2"
 	    PLAY="true" ALIGN="" LOOP="true" QUALITY="high"
 	    TYPE="application/x-shockwave-flash"
 	    PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer">

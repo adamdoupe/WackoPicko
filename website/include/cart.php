@@ -1,13 +1,19 @@
 <?php
+
+require_once("settings.php");
 require_once("ourdb.php");
+
+define("ACTION_URL",  DIRECTORY . "cart/action.php");
+define("CONFIRM_URL",  DIRECTORY . "cart/confirm.php");
+define("REVIEW_URL",  DIRECTORY . "cart/review.php");
+define("ADD_COUPON_URL",  DIRECTORY . "cart/add_coupon.php");
 
 class Cart
 {
-
-   static public $ACTION_URL = "/cart/action.php";
-   static public $CONFIRM_URL = "/cart/confirm.php";
-   static public $REVIEW_URL = "/cart/review.php";
-   static public $ADD_COUPON_URL = "/cart/add_coupon.php";
+   static public $ACTION_URL = ACTION_URL;
+   static public $CONFIRM_URL = CONFIRM_URL;
+   static public $REVIEW_URL = REVIEW_URL;
+   static public $ADD_COUPON_URL = ADD_COUPON_URL;
 
    function add_coupon($cartid, $couponcode)
    {

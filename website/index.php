@@ -1,5 +1,5 @@
 <?php
-
+require_once("include/settings.php");
 require_once("include/html_functions.php");
 
 ?>
@@ -17,18 +17,18 @@ require_once("include/html_functions.php");
 
   <h3>New Here?</h3>
   <p>
-    <h4><a href="/users/register.php">Create an account</a></h4>
+    <h4><a href="<?= DIRECTORY ?>users/register.php">Create an account</a></h4>
   </p>
   <p>
-    <h4><a href="/users/sample.php?userid=1">Check out a sample user!</a></h4>
+    <h4><a href="<?= DIRECTORY ?>users/sample.php?userid=1">Check out a sample user!</a></h4>
   </p>
   <p>
-    <h4><a href="/calendar.php">What is going on today?</a></h4>
+    <h4><a href="<?= DIRECTORY ?>calendar.php">What is going on today?</a></h4>
   </p>
   <p>
     <h4>Or you can test to see if WackoPicko can handle a file:</h4> <br />
   <script>
-    document.write('<form enctype="multipart/form-data" action="/pic' + 'check' + '.php" method="POST"><input type="hidden" name="MAX_FILE_SIZE" value="30000" />Check this file: <input name="userfile" type="file" /> <br />With this name: <input name="name" type="text" /> <br /> <br /><input type="submit" value="Send File" /><br /> </form>');
+    document.write('<form enctype="multipart/form-data" action="<?= DIRECTORY ?>pic' + 'check' + '.php" method="POST"><input type="hidden" name="MAX_FILE_SIZE" value="30000" />Check this file: <input name="userfile" type="file" /> <br />With this name: <input name="name" type="text" /> <br /> <br /><input type="submit" value="Send File" /><br /> </form>');
   </script>
   </p>
 </div>

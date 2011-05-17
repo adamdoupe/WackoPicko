@@ -8,7 +8,7 @@ require_login();
 
 Users::logout();
 
-http_redirect("/");
+http_redirect(DIRECTORY . "");
 
 
 ?>

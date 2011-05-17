@@ -30,7 +30,7 @@ if($_GET['action'] == "add")
    }
    if (!Cart::add_to_cart($cart['id'], $_GET['picid']))
    {
-      http_redirect("/error.php?msg=Unable to add to cart at this time. Sorry.");
+      http_redirect(DIRECTORY . "error.php?msg=Unable to add to cart at this time. Sorry.");
    }
    else
    {
@@ -49,17 +49,17 @@ elseif( $_GET['action'] == "purchase" )
 	 }
 	 else
 	 {
-	    http_redirect("/error.php?msg=Unable to purchase your cart at this time. Try again later");
+	    http_redirect(DIRECTORY . "error.php?msg=Unable to purchase your cart at this time. Try again later");
 	 }
       }
       else
       {
-	 http_redirect("/error.php?msg=You don't have enough money to purchase. Remove some items from <a href='" . Cart::$REVIEW_URL . "'>Your Cart</a>");
+	 http_redirect(DIRECTORY . "error.php?msg=You don't have enough money to purchase. Remove some items from <a href='" . Cart::$REVIEW_URL . "'>Your Cart</a>");
       }
    }
    else
    {
-      http_redirect("/error.php?msg=You have no cart, nothing to purchase!");
+      http_redirect(DIRECTORY . "error.php?msg=You have no cart, nothing to purchase!");
    }
 }
 elseif( $_GET['action'] == "delete" )
@@ -84,7 +84,7 @@ elseif( $_GET['action'] == "delete" )
    }
    else
    {
-      http_redirect("/error.php?msg=You have no cart, nothing to delete!");
+      http_redirect(DIRECTORY . "error.php?msg=You have no cart, nothing to delete!");
    }
 }
 elseif( $_GET['action'] == "deletecart" )

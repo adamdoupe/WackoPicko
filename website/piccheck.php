@@ -4,7 +4,7 @@ require_once("include/functions.php");
 
 if (!isset($_FILES['userfile']) && !isset($_POST['name']))
 {
-   http_redirect("/");
+   http_redirect(DIRECTORY . "");
 }
 
 

@@ -1,12 +1,17 @@
 <?php
 
+require_once("settings.php");
 require_once("ourdb.php");
+
+define("ADMIN_HOME_URL",  DIRECTORY . "admin/index.php?page=home");
+define("ADMIN_LOGIN_URL",  DIRECTORY . "admin/index.php?page=login");
+define("ADMIN_CREATE_URL",  DIRECTORY . "admin/index.php?page=create");
 
 class Admins
 {
-   static public $HOME_URL = "/admin/index.php?page=home";
-   static public $LOGIN_URL = "/admin/index.php?page=login";
-   static public $CREATE_URL = "/admin/index.php?page=create";
+   static public $HOME_URL = ADMIN_HOME_URL;
+   static public $LOGIN_URL = ADMIN_LOGIN_URL;
+   static public $CREATE_URL = ADMIN_CREATE_URL;
    static public $cur_admin = False;
 
    function get_admin_id($adminid)

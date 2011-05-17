@@ -42,7 +42,7 @@ if ($error)
 <div class="column prepend-1 span-24 first last" >
 <h2> Register for an account!</h2>
 <p>
-Protect yourself from hackers and <a href="/passcheck.php">check your password strength</a>
+Protect yourself from hackers and <a href="<?= DIRECTORY ?>passcheck.php">check your password strength</a>
 </p>
 <?php error_message() ?>
 <table cellspacing="0" style="width:320px">

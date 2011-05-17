@@ -16,7 +16,7 @@ $pictures = Pictures::get_purchased_pictures($user['id']);
 <?php our_header(); ?>
 <div class="column prepend-1 span-24 first last">
 <h2>You have purchased the following pictures: </h2>
-   <?php thumbnail_pic_list($pictures, "/pictures/highquality.php?key=highquality&"); ?>
+   <?php thumbnail_pic_list($pictures, DIRECTORY . "pictures/high_quality.php?key=highquality&"); ?>
 </div>
 
 

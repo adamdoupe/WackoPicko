@@ -1,15 +1,21 @@
 <?php
 
+require_once("settings.php");
 require_once("ourdb.php");
 
+define("HOME_URL", DIRECTORY . "users/home.php");
+define("VIEW_URL", DIRECTORY . "users/home.php");
+define("LOGIN_URL", DIRECTORY . "users/login.php");
+define("LOGOUT_URL",  DIRECTORY . "users/logout.php");
+define("PURCHASED_URL",  DIRECTORY . "pictures/purchased.php");
 
 class Users
 {
-   static public $HOME_URL = "/users/home.php";
-   static public $VIEW_URL = "/users/view.php";
-   static public $LOGIN_URL = "/users/login.php";
-   static public $LOGOUT_URL = "/users/logout.php";
-   static public $PURCHASED_URL = "/pictures/purchased.php";
+   static public $HOME_URL = HOME_URL;
+   static public $VIEW_URL = VIEW_URL;
+   static public $LOGIN_URL = LOGIN_URL;
+   static public $LOGOUT_URL = LOGOUT_URL;
+   static public $PURCHASED_URL = PURCHASED_URL;
    static public $cur_user = False;
 
    function get_user($userid)

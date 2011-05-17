@@ -1,12 +1,17 @@
 <?php
 
+require_once("settings.php");
 require_once("ourdb.php");
+
+define("ADD_COMMENT_URL",  DIRECTORY . "comments/add_comment.php");
+define("PREVIEW_COMMENT_URL",  DIRECTORY . "comments/preview_comment.php");
+define("DELETE_PREVIEW_COMMENT_URL",  DIRECTORY . "comments/delete_preview_comment.php");
 
 class Comments
 {
-   static public $ADD_COMMENT_URL = "/comments/add_comment.php";
-   static public $PREVIEW_COMMENT_URL = "/comments/preview_comment.php";
-   static public $DELETE_PREVIEW_COMMENT_URL = "/comments/delete_preview_comment.php";
+   static public $ADD_COMMENT_URL = ADD_COMMENT_URL;
+   static public $PREVIEW_COMMENT_URL = PREVIEW_COMMENT_URL;
+   static public $DELETE_PREVIEW_COMMENT_URL = DELETE_PREVIEW_COMMENT_URL;
 
    function add_preview($text, $userid, $pictureid)
    {

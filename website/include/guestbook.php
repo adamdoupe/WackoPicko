@@ -2,9 +2,11 @@
 
 require_once("ourdb.php");
 
+define("GUESTBOOK_URL",  DIRECTORY . "guestbook.php");
+
 class Guestbook
 {
-   static public $GUESTBOOK_URL = "/guestbook.php";
+   static public $GUESTBOOK_URL = GUESTBOOK_URL;
 
    function get_all_guestbooks()
    {

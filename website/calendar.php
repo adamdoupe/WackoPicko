@@ -1,5 +1,5 @@
 <?php
-
+require_once("include/settings.php");
 require_once("include/html_functions.php");
 
 if (isset($_GET['date']))
@@ -33,7 +33,7 @@ $next_time = $date + (24 * 60 * 60);
   <p>Nothing!</p>
   <?php } ?>
   <p>
-    <a href="/calendar.php?date=<?= $next_time ?>">What about tomorrow?</a>
+    <a href="<?= DIRECTORY ?>calendar.php?date=<?= $next_time ?>">What about tomorrow?</a>
   </p>
 </div>
 
