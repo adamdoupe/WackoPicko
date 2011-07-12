@@ -19,7 +19,7 @@ if (isset($_POST['previewid']) && isset($_POST['picid']))
    }
    else
    {
-      http_redirect(".." . Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);      
+      http_redirect(Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);      
    }
 }
 else
@@ -32,7 +32,7 @@ if ($error)
 {
    if (isset($_POST['previewid']))
    {
-      http_redirect(".." . Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);
+      http_redirect(Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);
    }
    else
    {

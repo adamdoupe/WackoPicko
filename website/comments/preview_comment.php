@@ -41,7 +41,7 @@ if ($error)
 {
    if (isset($_POST['picid']))
    {
-      http_redirect(".." . Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);
+      http_redirect(Pictures::$VIEW_PIC_URL . "?picid=" . $_POST['picid']);
    }
    else
    {
