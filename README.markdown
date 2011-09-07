@@ -2,9 +2,6 @@
 
 WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf)
 
-## Download Pre-Built Image
-If you don't want to set up WackoPicko from source, [Matthew Phillips](mailto:info@gnacktrack.co.uk) is hosting a [live CD and VMware image of WackoPicko](http://gnacktrack.co.uk/download.php) on his [GnackTrack](http://gnacktrack.co.uk) server. 
-
 ## External Links/Help
 * [WackoPicko on aldeid](http://www.aldeid.com/index.php/WackoPicko), a security wiki.
 
