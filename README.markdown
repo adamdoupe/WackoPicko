@@ -2,6 +2,10 @@
 
 WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf)
 
+## Virtual Machine
+
+WackoPicko is now included as an application in the [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project#tab=Main) which is a Virtual Machine with numerous intentionally vulnerable application.
+
 ## External Links/Help
 * [WackoPicko on aldeid](http://www.aldeid.com/index.php/WackoPicko), a security wiki.
 
