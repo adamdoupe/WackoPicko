@@ -5,23 +5,6 @@ WackoPicko is a website that contains known vulnerabilities. It was first used f
 ## External Links/Help
 * [WackoPicko on aldeid](http://www.aldeid.com/index.php/WackoPicko), a security wiki.
 
-### Converting VMware Image to VirtualBox
-This was sent to me by Matthew Harbage, to get the VMware image working on VirtualBox on a Windows host:
-
-> Two actions to get the virtualized version of WackoPicko working so you can connect to Apache from the host machine (using VirtualBox)
-> 
-> 1. On the guest: delete /etc/udev/rules.d/70-persistent-net.rules (to clear MAC address details of the adapter from the machine the virual image was greated by). This enables Ubuntu to enable the (virtualized) network adapter.
-> 
-> 2. On the host: map port 80 through from the guest to be accessible from the host using 
-> 
-> "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm "X" --natpf1 "guestweb,tcp,,8888,,80"
->
-> where X is the name of the VirtualBox virual machine.
->
-> This means in your favourate browser from your host machine, you can access WackoPicko via:
-> http://[ip-address of VirtualBox adapter]:8888
-
-
 ## Install From Source 
 Import the WackoPicko database into MySQL using a command like the following:  
   mysql -u <user> -p < current.sql
