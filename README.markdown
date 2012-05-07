@@ -7,7 +7,7 @@ WackoPicko is a website that contains known vulnerabilities. It was first used f
 WackoPicko is now included as an application in the [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project#tab=Main) which is a Virtual Machine with numerous intentionally vulnerable application.
 
 ## External Links/Help
-* [WackoPicko on aldeid](http://www.aldeid.com/index.php/WackoPicko), a security wiki.
+* [WackoPicko on aldeid](http://www.aldeid.com/wiki/WackoPicko), a security wiki.
 
 ## Install From Source 
 Import the WackoPicko database into MySQL using a command like the following:  
