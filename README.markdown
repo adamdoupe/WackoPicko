@@ -12,6 +12,7 @@ WackoPicko is now included as an application in the [OWASP Broken Web Applicatio
 ## Install From Source 
 
 First, ensure that short_open_tag PHP ini option is enabled:
+
 http://www.php.net/manual/en/ini.core.php#ini.short-open-tag
 
 Import the WackoPicko database into MySQL using a command like the following:  
