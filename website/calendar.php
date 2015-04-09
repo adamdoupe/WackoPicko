@@ -8,13 +8,13 @@ if (isset($_GET['date']))
 }
 else
 {
-   $date = time();
+   $date = floor(time()/(24*3600));
 }
-$cur_text = date("l jS \of F Y", $date);
-$day = date("D", $date);
+$cur_text = date("l jS \of F Y", $date*24*3600);
+$day = date("D", $date*24*3600);
 $is_party = ($day == "Fri" || $day == "Sat");
 // add a day
-$next_time = $date + (24 * 60 * 60);
+$next_time = $date + 1;
 ?>
 
 <?php our_header("calendar"); ?>
