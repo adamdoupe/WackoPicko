@@ -2,6 +2,25 @@
 
 WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf)
 
+## Docker Image
+
+I recently created a
+[wackopicko docker image](https://hub.docker.com/r/adamdoupe/wackopicko/wackopico-docker),
+which is just about the easiest way to run wackopicko.
+
+Simply run the following, which will map your local port `8080` to the
+port `80` in the container. Change the `8080` to another port if you
+like:
+
+	docker run -p 127.0.0.1:8080:80 -it adamdoupe/wackopicko
+
+Once the docker image is downloaded and running, you should be able to
+access wackopicko on your browser:
+[http://localhost:8080](http://localhost:8080).
+
+Note that Windows users might need some additional steps to do the
+port forwarding correctly. Google is your friend, use it well. 
+
 ## Virtual Machine
 
 WackoPicko is now included as an application in the [OWASP Broken Web Applications Project](https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project#tab=Main) which is a Virtual Machine with numerous intentionally vulnerable application.
