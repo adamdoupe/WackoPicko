@@ -5,7 +5,7 @@ WackoPicko is a website that contains known vulnerabilities. It was first used f
 ## Docker Image
 
 I recently created a
-[wackopicko docker image](https://hub.docker.com/r/adamdoupe/wackopicko/wackopico-docker),
+[wackopicko docker image](https://hub.docker.com/r/adamdoupe/wackopicko/),
 which is just about the easiest way to run wackopicko.
 
 Simply run the following, which will map your local port `8080` to the
