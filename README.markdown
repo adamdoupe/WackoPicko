@@ -1,6 +1,6 @@
 # WackoPicko Vulnerable Website
 
-WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf)
+WackoPicko is a website that contains known vulnerabilities. It was first used for the paper [Why Johnny Can't Pentest: An Analysis of Black-box Web Vulnerability Scanners](http://adamdoupe.com/publications/black-box-scanners-dimva2010.pdf)
 
 ## Docker Image
 
@@ -39,7 +39,7 @@ Import the WackoPicko database into MySQL using a command like the following:
   
 This will create the MySQL user wackopicko with the password webvuln!@# as well as create the wackopicko table.
 
-The wackopicko table contains all of the data that was present while testing the scanners in [Why Johnny Can't Pentest](http://cs.ucsb.edu/~adoupe/static/black-box-scanners-dimva2010.pdf).
+The wackopicko table contains all of the data that was present while testing the scanners in [Why Johnny Can't Pentest](http://adamdoupe.com/publications/black-box-scanners-dimva2010.pdf).
 
 The final step is to enable read/write access to the upload directory of WackoPicko for the webserver user. An easy way to do this is:  
   chmod 777 -R upload
