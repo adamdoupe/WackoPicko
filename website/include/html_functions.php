@@ -65,8 +65,7 @@ function error_message()
 <p class="span-10 error">
 	 <?= h($flash['error']) ?>
 </p>
-
-      <?
+      <?php
    }
 }
 
