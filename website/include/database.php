@@ -7,6 +7,7 @@ class DB
    {
       $this->conn = mysql_connect($server, $user_name, $pass);
       mysql_select_db($db, $this->conn);
+      mysql_set_charset('utf8');
    }
 
    function __destruct()
