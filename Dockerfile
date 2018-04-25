@@ -1,10 +1,10 @@
 FROM tutum/lamp
 MAINTAINER Adam Doupe <adamdoupe@gmail.com>
 
+RUN apt-get update && apt-get install -y libgd-dev php5-gd
 RUN rm -fr /app
 COPY website /app
 RUN chmod 777 /app/upload
-RUN apt-get update && apt-get install -y libgd-dev php5-gd
 
 COPY current.sql .
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
