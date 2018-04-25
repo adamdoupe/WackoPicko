@@ -15,14 +15,16 @@ if (!(isset($_GET['key']) && isset($_GET['picid'])))
 }
 
 $user = Users::current_user();
-$pic = Pictures::get_picture($picid);
+$pic = Pictures::get_picture($_GET['picid']);
 
 if ($_GET['key'] != $pic['high_quality'])
 {
    error_404();
 }
 
-header("Content-type: " . mime_content_type($filename));
-passthru("cat $filename");
+$filepath = "../upload/" . $pic['filename'];
+
+header("Content-type: " . mime_content_type($filepath));
+passthru("cat $filepath");
 
 ?>
