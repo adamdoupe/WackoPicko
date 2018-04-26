@@ -6,12 +6,12 @@ session_start();
 
 function our_header($selected = "", $search_terms = "")
 {
-   
+
    ?>
 <html>
   <head>
     <link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print"> 
+    <link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print">
     <!--[if IE]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
     <link rel="stylesheet" href="/css/stylings.css" type="text/css" media="screen">
     <title>WackoPicko.com</title>
@@ -28,7 +28,7 @@ function our_header($selected = "", $search_terms = "")
 	    <li class="<?php if($selected == "upload"){ echo 'current'; } ?>"><a href="/pictures/upload.php"><span>Upload</span></a></li>
 	    <li class="<?php if($selected == "recent"){ echo 'current'; } ?>"><a href="/pictures/recent.php"><span>Recent</span></a></li>
             <li class="<?php if($selected == "guestbook"){ echo 'current'; } ?>"><a href="/guestbook.php"><span>Guestbook</span></a></li>
-      
+
       <?php if (Users::is_logged_in()) { ?><li class="<?php if($selected == "cart"){ echo 'current'; } ?>"><a href="/cart/review.php"><span>Cart</span></a></li> <?php } ?>
 	  </ul>
 	</div>
@@ -42,9 +42,9 @@ function our_header($selected = "", $search_terms = "")
 	  </ul>
 	</div>
       </div>
-      
-      
-      
+
+
+
       <div class="column span-24 first last" id="search_bar_blue">
 	<div class="column prepend-17 span-7 first last" id="search_box">
 	  <form action="/pictures/search.php" method="get" style="display:inline;">
@@ -82,25 +82,29 @@ function our_footer()
       </div>
     </div>
   </body>
-</html>  
+</html>
    <?php
 
 }
 
-function thumbnail_pic_list($pictures, $link_to = False)
+function thumbnail_pic_list($pictures, $high_quality = False)
 {
-   if (!$link_to)
-   {
-      $link_to = Pictures::$VIEW_PIC_URL."?";
-   }
    ?>
 <div class="column prepend-1 span-21 first last" style="margin-bottom: 2em;">
       <?php if ($pictures) { ?>
 <ul class="thumbnail-pic-list">
 <?php
-
    for ($i = 0; $i < count($pictures); $i++)
    {
+      $link_to = '';
+      if (!$high_quality)
+      {
+        $link_to = Pictures::$VIEW_PIC_URL . "?";
+      }
+      else
+      {
+        $link_to = Pictures::$HIGH_QUALITY_URL . "?";
+      }
       $pic = $pictures[$i];
       if ($i != 0 && (($i % 4) == 0))
       {
@@ -111,10 +115,14 @@ function thumbnail_pic_list($pictures, $link_to = False)
 <ul class="thumbnail-pic-list">
 	 <?php
       }
-
+$link_to = $link_to . "picid=" . $pic['id'];
+if ($high_quality)
+{
+  $link_to = $link_to . "&key=" . urlencode($pic['high_quality']);
+}
 ?>
 <li>
-<a href="<?=h( $link_to . "picid=" . $pic['id'] ) ?>"><img src="/upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
+<a href="<?=h($link_to) ?>"><img src="/upload/<?=h( $pic['filename']) ?>.128_128.jpg" height="128" width="128" /></a>
 </li>
 <?php
 
@@ -133,9 +141,10 @@ function thumbnail_pic_list($pictures, $link_to = False)
 
 function high_quality_item_link($item)
 {
-   $name = h($_SERVER['SERVER_NAME']);
-   $link = "http://{$name}/pictures/highquality.php?picid={$item['id']}&key=highquality";
-   return "<a href='{$link}'>{$link}</a>"; 
+   $name = url_origin($_SERVER);
+   $high_quality_encoded = urlencode($item['high_quality']);
+   $link = $name . Pictures::$HIGH_QUALITY_URL . "?picid={$item['id']}&key={$high_quality_encoded}";
+   return "<a href='{$link}'>{$link}</a>";
 }
 
 

@@ -7,7 +7,7 @@ class Pictures
 
    static public $VIEW_PIC_URL = "/pictures/view.php";
    static public $CONFLICT_URL = "/pictures/conflict.php";
-   static public $HIGH_QUALITY_URL = "/pictures/highquality.php";
+   static public $HIGH_QUALITY_URL = "/pictures/high_quality.php";
    static public $RECENT_URL = "/pictures/recent.php";
    function get_all_pictures_by_user($userid)
    {
@@ -109,7 +109,7 @@ class Pictures
 
    function get_picture($picid)
    {
-      $query = sprintf("SELECT pictures.id, pictures.title, pictures.filename, pictures.price, pictures.user_id, pictures.tag, users.login,  UNIX_TIMESTAMP(pictures.created_on) as created_on_unix from pictures, users where pictures.id = '%d' and pictures.user_id = users.id limit 1",
+      $query = sprintf("SELECT pictures.id, pictures.title, pictures.filename, pictures.high_quality, pictures.price, pictures.user_id, pictures.tag, users.login,  UNIX_TIMESTAMP(pictures.created_on) as created_on_unix from pictures, users where pictures.id = '%d' and pictures.user_id = users.id limit 1",
 		       mysql_real_escape_string($picid));
       $res = mysql_query($query);
       if ($res)
@@ -124,7 +124,7 @@ class Pictures
 
    function get_purchased_pictures($userid)
    {
-      $query = sprintf("SELECT pictures.id, pictures.filename from pictures, own where own.user_id = '%d' and pictures.id = own.picture_id;",
+      $query = sprintf("SELECT pictures.id, pictures.filename, pictures.high_quality from pictures, own where own.user_id = '%d' and pictures.id = own.picture_id;",
 		       mysql_real_escape_string($userid));
       $res = mysql_query($query);
       if ($res)
@@ -144,7 +144,7 @@ class Pictures
    function create_picture($title, $width, $height, $tag, $filename, $price, $userid)
    {
       $high_quality_key = mt_rand(0, 10000000);
-      $high_quality_key = base64_encode($high_quality_key);     
+      $high_quality_key = base64_encode($high_quality_key);
       $query = sprintf("INSERT INTO `pictures` (`id`, `title`, `width`, `height`, `tag`, `filename`, `price`, `high_quality`, `created_on`, `user_id`) VALUES (NULL, '%s', '%d', '%d', '%s', '%s', '%d', '%s', NOW(), '%d');",
 		       mysql_real_escape_string($title),
 		       mysql_real_escape_string($width),
@@ -165,7 +165,7 @@ class Pictures
    }
 
 
-   
+
    function add_conflict($orig_filename, $new_filename, $new_tag, $new_name, $new_price, $user_id)
    {
       $query = sprintf("INSERT INTO `conflict_pictures` (`id`, `orig_filename`, `new_filename`, `new_tag`, `new_name`, `new_price`, `user_id`) VALUES (NULL, '%s', '%s', '%s', '%s', '%d', '%s');",
@@ -185,7 +185,7 @@ class Pictures
       }
    }
 
-   
+
 
    function delete_conflict($conflictid, $choice)
    {
@@ -201,7 +201,7 @@ class Pictures
 	 }
 	 else
 	 {
-	    $to_ret = Pictures::create_picture($conflict['new_name'], 128, 128, $conflict['new_tag'], basename($conflict['new_filename']), $conflict['new_price'], $conflict['user_id']);	    
+	    $to_ret = Pictures::create_picture($conflict['new_name'], 128, 128, $conflict['new_tag'], basename($conflict['new_filename']), $conflict['new_price'], $conflict['user_id']);
 	 }
       }
       $query = sprintf("DELETE from `conflict_pictures` where `id` = '%d' limit 1;",
@@ -227,7 +227,7 @@ class Pictures
    }
 
    function resize_image($source_pic, $destination_pic, $max_width, $max_height)
-   {   
+   {
       $src = imagecreatefromjpeg($source_pic);
       list($width,$height)=getimagesize($source_pic);
 
@@ -255,7 +255,7 @@ class Pictures
 
       imagejpeg($tmp,$destination_pic,100);
       imagedestroy($src);
-      imagedestroy($tmp);   
+      imagedestroy($tmp);
    }
 }
 
