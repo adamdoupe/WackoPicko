@@ -10,8 +10,5 @@ COPY current.sql .
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
 ADD php.ini /etc/php5/apache2/php.ini
 ADD php.ini /etc/php5/cli/php.ini
+RUN sed -i 's/150/250/g' /etc/apache2/mods-available/mpm_worker.conf
 RUN chmod 755 /*.sh
-
-
-
-
