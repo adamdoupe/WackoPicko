@@ -8,7 +8,7 @@ if (isset($_POST['password']))
    // check the password strength
    $pass = $_POST['password'];
    $command = "grep ^$pass$ /etc/dictionaries-common/words";
-   exec($command, $output, $ret);   
+   exec(escapeshellcmd($command), $output, $ret);   
    $checked = true;
 }
 
